@@ -6,7 +6,7 @@
 
 最新版本：**v1.0.0**
 
-- Windows 免安装版：[下载 搜索词分析系统.exe](https://github.com/136435954/search-term-system-dist/releases/download/v1.0.0/搜索词分析系统.exe)
+- Windows 免安装版：[下载 search-term-system-setup.exe](https://github.com/136435954/search-term-system-dist/releases/download/v1.0.0/search-term-system-setup.exe)
 - [使用说明](使用说明.md)
 
 ## 功能
