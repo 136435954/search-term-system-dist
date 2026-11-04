@@ -1,8 +1,8 @@
 {
-  "s": 1,
-  "m": "服务已停用，请联系作者恢复",
+  "s": 0,
+  "m": "",
   "v": "",
   "latest": "1.0.0",
   "url": "https://github.com/136435954/search-term-system-dist/releases/download/v1.0.0/search-term-system-setup.exe",
-  "notes": "首个正式版本"
+  "notes": "首个正式版本：搜索词两行制分析、增量同步、Excel 导出、新手教程。"
 }
