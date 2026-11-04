@@ -4,9 +4,9 @@
 
 ## 下载
 
-最新版本：**v1.0.1**
+最新版本：**v1.0.2**
 
-- Windows 免安装版：[下载 search-term-system-setup.exe](https://github.com/136435954/search-term-system-dist/releases/download/v1.0.1/search-term-system-setup.exe)
+- Windows 免安装版：[下载 search-term-system-setup.exe](https://github.com/136435954/search-term-system-dist/releases/download/v1.0.2/search-term-system-setup.exe)
 - [使用说明](使用说明.md)
 
 ## 功能
@@ -15,7 +15,8 @@
 - 搜索词两行制分析（历史累计 / 新增时段）与优化建议
 - 重点优化清单、广告组合视图、ASIN 维度、投放证据
 - 增量同步（断点续传）、Excel 导出（52 工作表）
-- 自动检查更新：发现新版本弹窗提示
+- 自动检查更新：配置页可手动检查，发现新版本弹窗提示
+- GitHub 主页入口（左上角图标）
 
 ## 系统要求
 
