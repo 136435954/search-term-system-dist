@@ -4,9 +4,9 @@
 
 ## 下载
 
-最新版本：**v1.0.5**
+最新版本：**v1.1.0**
 
-- Windows 免安装版：[下载 search-term-system-setup.exe](https://github.com/136435954/search-term-system-dist/releases/download/v1.0.5/search-term-system-setup.exe)
+- Windows 免安装版：[下载 search-term-system-setup.exe](https://github.com/136435954/search-term-system-dist/releases/download/v1.1.0/search-term-system-setup.exe)
 - [使用说明](使用说明.md)
 
 ## 功能
@@ -26,8 +26,8 @@
 
 ## 隐私与安全
 
-- 凭证仅保存在本机 `config.json`，不随软件分发、不上传
-- 数据全部存储在本机 `data/` 目录
+- 凭证仅保存在本机 config.json，不随软件分发、不上传
+- 数据全部存储在本机 data/ 目录
 - 软件以本地服务方式运行（127.0.0.1），不对外网开放
 
 ## 使用
