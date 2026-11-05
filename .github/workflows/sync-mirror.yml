@@ -1,0 +1,20 @@
+name: Sync Mirror
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Push to mirror
+        env:
+          MIRROR_TOKEN: ${{ secrets.GITEE_TOKEN }}
+        run: |
+          git remote add mirror https://yan-tiantian:${MIRROR_TOKEN}@gitee.com/yan-tiantian/search-term-system-dist.git
+          git push -f mirror main
