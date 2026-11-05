@@ -4,9 +4,9 @@
 
 ## 下载
 
-最新版本：**v1.1.0**
+最新版本：**v1.2.0**
 
-- Windows 免安装版：[下载 search-term-system-setup.exe](https://github.com/136435954/search-term-system-dist/releases/download/v1.1.0/search-term-system-setup.exe)
+- Windows 免安装版：[下载 search-term-system-setup.exe](https://github.com/136435954/search-term-system-dist/releases/download/v1.2.0/search-term-system-setup.exe)
 - [使用说明](使用说明.md)
 
 ## 功能
