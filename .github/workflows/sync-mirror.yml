@@ -7,7 +7,7 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -17,26 +17,42 @@ jobs:
         run: |
           set -e
           python3 - <<'PYEOF'
-          import base64, json, os, urllib.request, urllib.parse, urllib.error
+          import base64, json, os, sys, time, urllib.request, urllib.parse, urllib.error
+
           token = os.environ["GITEE_TOKEN"]
           OWNER = "yan-tiantian"
           REPO = "search-term-system-dist"
           FILES = ["README.md", "config.json", "使用说明.md"]
+          RETRIES = 3
+          TIMEOUT = 90
 
           def api(path, method="GET", payload=None):
               url = "https://gitee.com/api/v5/repos/%s/%s/contents/%s" % (OWNER, REPO, urllib.parse.quote(path, safe=""))
-              if payload is not None:
-                  data = urllib.parse.urlencode(payload).encode()
-                  req = urllib.request.Request(url, data=data, method=method,
-                      headers={"User-Agent": "sync", "Content-Type": "application/x-www-form-urlencoded"})
-              else:
-                  req = urllib.request.Request(url, headers={"User-Agent": "sync"})
-              try:
-                  r = urllib.request.urlopen(req, timeout=60)
-                  return r.status, json.loads(r.read())
-              except urllib.error.HTTPError as e:
-                  return e.code, None
+              last = ("ERR", "unknown")
+              for attempt in range(1, RETRIES + 1):
+                  try:
+                      if payload is not None:
+                          data = urllib.parse.urlencode(payload).encode()
+                          req = urllib.request.Request(url, data=data, method=method,
+                              headers={"User-Agent": "sync", "Content-Type": "application/x-www-form-urlencoded"})
+                      else:
+                          req = urllib.request.Request(url, headers={"User-Agent": "sync"})
+                      r = urllib.request.urlopen(req, timeout=TIMEOUT)
+                      return r.status, json.loads(r.read())
+                  except urllib.error.HTTPError as e:
+                      if e.code in (429, 500, 502, 503, 504) and attempt < RETRIES:
+                          last = (e.code, None)
+                          time.sleep(2 * attempt)
+                          continue
+                      return e.code, None
+                  except Exception as e:
+                      last = ("ERR", str(e)[:120])
+                      if attempt < RETRIES:
+                          time.sleep(2 * attempt)
+                          continue
+              return last
 
+          failed = []
           for name in FILES:
               if not os.path.exists(name):
                   continue
@@ -48,9 +64,25 @@ jobs:
                   st2, info = api(name)
                   if info and "sha" in info:
                       payload["sha"] = info["sha"]
-                      api(name, method="PUT", payload=payload)
-                      print("updated", name)
+                      st3, _ = api(name, method="PUT", payload=payload)
+                      if st3 == 200:
+                          print("updated", name)
+                      else:
+                          failed.append(name)
+                          print("PUT fail", name, st3)
+                  else:
+                      failed.append(name)
+                      print("GET sha fail", name, st2)
               else:
-                  api(name, method="POST", payload=payload)
-                  print("created", name)
+                  st4, _ = api(name, method="POST", payload=payload)
+                  if st4 == 201:
+                      print("created", name)
+                  else:
+                      failed.append(name)
+                      print("POST fail", name, st4)
+
+          if failed:
+              print("SYNC FAILED:", failed)
+              sys.exit(1)
+          print("ALL SYNCED")
           PYEOF
