@@ -7,14 +7,50 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Push to mirror
+      - name: Sync files to mirror
         env:
-          MIRROR_TOKEN: ${{ secrets.GITEE_TOKEN }}
+          GITEE_TOKEN: ${{ secrets.GITEE_TOKEN }}
         run: |
-          git remote add mirror https://yan-tiantian:${MIRROR_TOKEN}@gitee.com/yan-tiantian/search-term-system-dist.git
-          git push -f mirror main
+          set -e
+          python3 - <<'PYEOF'
+          import base64, json, os, urllib.request, urllib.parse, urllib.error
+          token = os.environ["GITEE_TOKEN"]
+          OWNER = "yan-tiantian"
+          REPO = "search-term-system-dist"
+          FILES = ["README.md", "config.json", "使用说明.md"]
+
+          def api(path, method="GET", payload=None):
+              url = "https://gitee.com/api/v5/repos/%s/%s/contents/%s" % (OWNER, REPO, urllib.parse.quote(path, safe=""))
+              if payload is not None:
+                  data = urllib.parse.urlencode(payload).encode()
+                  req = urllib.request.Request(url, data=data, method=method,
+                      headers={"User-Agent": "sync", "Content-Type": "application/x-www-form-urlencoded"})
+              else:
+                  req = urllib.request.Request(url, headers={"User-Agent": "sync"})
+              try:
+                  r = urllib.request.urlopen(req, timeout=60)
+                  return r.status, json.loads(r.read())
+              except urllib.error.HTTPError as e:
+                  return e.code, None
+
+          for name in FILES:
+              if not os.path.exists(name):
+                  continue
+              with open(name, "rb") as f:
+                  content = base64.b64encode(f.read()).decode()
+              st, _ = api(name)
+              payload = {"access_token": token, "content": content, "message": "sync " + name}
+              if st == 200:
+                  st2, info = api(name)
+                  if info and "sha" in info:
+                      payload["sha"] = info["sha"]
+                      api(name, method="PUT", payload=payload)
+                      print("updated", name)
+              else:
+                  api(name, method="POST", payload=payload)
+                  print("created", name)
+          PYEOF
