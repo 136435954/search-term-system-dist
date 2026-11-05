@@ -1,1 +1,1 @@
-{"latest":"1.0.5","url":"https://github.com/136435954/search-term-system-dist/releases/download/v1.0.5/search-term-system-setup.exe","notes":"v1.0.5：优化状态判定机制，提升稳定性与安全保护。"}
+{"latest": "1.1.0", "url": "https://github.com/136435954/search-term-system-dist/releases/download/v1.1.0/search-term-system-setup.exe", "notes": "v1.1.0：增量同步断点回退一天，次日自动补全断点当天数据。"}
