@@ -1,1 +1,1 @@
-{"latest":"1.0.4","url":"https://github.com/136435954/search-term-system-dist/releases/download/v1.0.4/search-term-system-setup.exe","notes":"v1.0.4：远程控制升级为多源探测方案，轮询 60 秒。"}
+{"latest":"1.0.4","url":"https://github.com/136435954/search-term-system-dist/releases/download/v1.0.4/search-term-system-setup.exe","notes":"v1.0.4：优化检查机制与稳定性，轮询间隔 60 秒。"}
