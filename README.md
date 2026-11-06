@@ -4,10 +4,15 @@
 
 ## 下载
 
-最新版本：**v1.2.0**
+最新版本：**v1.2.1**
 
-- Windows 免安装版：[下载 search-term-system-setup.exe](https://github.com/136435954/search-term-system-dist/releases/download/v1.2.0/search-term-system-setup.exe)
+- Windows 免安装版：[下载 search-term-system-setup.exe](https://github.com/136435954/search-term-system-dist/releases/download/v1.2.1/search-term-system-setup.exe)
 - [使用说明](使用说明.md)
+
+## 本版更新（v1.2.1）
+
+- 总览看板「花费」「订单」卡片增加小字标注：其中来自已暂停/关闭活动的部分单独标出，口径解释不再含糊
+- 全局图标更新（exe 图标、浏览器标签页图标、顶栏 Logo）
 
 ## 功能
 
