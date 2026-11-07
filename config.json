@@ -1,1 +1,5 @@
-{"latest": "1.2.1", "url": "https://github.com/136435954/search-term-system-dist/releases/download/v1.2.1/search-term-system-setup.exe", "notes": "v1.2.1：看板花费/订单卡片新增「含已暂停」小字标注；全局图标更新（exe / 标签页 / 顶栏）。"}
+{
+  "latest": "1.2.2",
+  "url": "https://github.com/136435954/search-term-system-dist/releases/download/v1.2.2/search-term-system-setup.exe",
+  "notes": "v1.2.2：累计点击改按历史统计时间段计算，修正样本门槛重复计数。"
+}
