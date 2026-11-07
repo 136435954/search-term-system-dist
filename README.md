@@ -4,15 +4,17 @@
 
 ## 下载
 
-最新版本：**v1.2.2**
+最新版本：**v1.2.3**
 
-- Windows 免安装版：[下载 search-term-system-setup.exe](https://github.com/136435954/search-term-system-dist/releases/download/v1.2.2/search-term-system-setup.exe)
+- Windows 免安装版：[下载 search-term-system-setup.exe](https://github.com/136435954/search-term-system-dist/releases/download/v1.2.3/search-term-system-setup.exe)
 - [使用说明](使用说明.md)
 
-## 本版更新（v1.2.2）
+## 本版更新（v1.2.3）
 
-- 修正「累计点击」口径：改为历史统计时间段内的点击之和。此前当历史区间已包含新增时段（默认「近一年」包含「近 30 天」）时，同一批点击会被算两遍，点击 6~9 次的词可能被误判为达到 10 次决策门槛
-- 两行制展示口径不变：历史累计仍是全区间累计，新增时段仍是该时段单独表现
+- 广告组合列表新增「全选」：一键勾选当前搜索结果里的全部组合，再点一次即取消
+- 全选按搜索框过滤后的列表生效，先搜关键词再全选可以只选中同一类组合
+- 已选数量实时显示（如「已选 12/41」），部分勾选时全选框显示中间态
+- 取消全部勾选后，页面标题与表格同步清空，不再残留上一次的组合数
 
 ## 功能
 
