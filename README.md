@@ -4,15 +4,15 @@
 
 ## 下载
 
-最新版本：**v1.2.1**
+最新版本：**v1.2.2**
 
-- Windows 免安装版：[下载 search-term-system-setup.exe](https://github.com/136435954/search-term-system-dist/releases/download/v1.2.1/search-term-system-setup.exe)
+- Windows 免安装版：[下载 search-term-system-setup.exe](https://github.com/136435954/search-term-system-dist/releases/download/v1.2.2/search-term-system-setup.exe)
 - [使用说明](使用说明.md)
 
-## 本版更新（v1.2.1）
+## 本版更新（v1.2.2）
 
-- 总览看板「花费」「订单」卡片增加小字标注：其中来自已暂停/关闭活动的部分单独标出，口径解释不再含糊
-- 全局图标更新（exe 图标、浏览器标签页图标、顶栏 Logo）
+- 修正「累计点击」口径：改为历史统计时间段内的点击之和。此前当历史区间已包含新增时段（默认「近一年」包含「近 30 天」）时，同一批点击会被算两遍，点击 6~9 次的词可能被误判为达到 10 次决策门槛
+- 两行制展示口径不变：历史累计仍是全区间累计，新增时段仍是该时段单独表现
 
 ## 功能
 
