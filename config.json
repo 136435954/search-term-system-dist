@@ -1,5 +1,5 @@
 {
-  "latest": "1.2.2",
-  "url": "https://github.com/136435954/search-term-system-dist/releases/download/v1.2.2/search-term-system-setup.exe",
-  "notes": "v1.2.2：累计点击改按历史统计时间段计算，修正样本门槛重复计数。"
+  "latest": "1.2.3",
+  "url": "https://github.com/136435954/search-term-system-dist/releases/download/v1.2.3/search-term-system-setup.exe",
+  "notes": "v1.2.3：广告组合列表新增全选/取消全选，随搜索结果联动。"
 }
