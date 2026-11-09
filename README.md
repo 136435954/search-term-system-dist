@@ -4,20 +4,19 @@
 
 ## 下载
 
-最新版本：**v1.2.4**
+最新版本：**v1.2.5**
 
-- Windows 免安装版：[下载 search-term-system-setup.exe](https://github.com/136435954/search-term-system-dist/releases/download/v1.2.4/search-term-system-setup.exe)
+- Windows 免安装版：[下载 search-term-system-setup.exe](https://github.com/136435954/search-term-system-dist/releases/download/v1.2.5/search-term-system-setup.exe)
 - [使用说明](使用说明.md)
 
-## 本版更新（v1.2.4）
+## 本版更新（v1.2.5）
+
+- 全选 41 个广告组合时页面卡顿明显改善：从原来的约 9.6 秒降到约 2.9 秒
+- 优化方式：只渲染当前正在看的那个表格（搜索词明细 / 广告组合视图），不再同时生成两份上万行 DOM；渲染期间先显示「正在渲染 N 行」提示，不再整页冻结
+
+## 上一版（v1.2.4）
 
 - 配置页「测试连接」报错时，直接显示积加网关返回的具体原因（如「IP 不在白名单」「签名校验不通过」），不再只显示笼统的「HTTP 400 Bad Request」
-
-## 上一版（v1.2.3）
-
-- 广告组合列表新增「全选」：一键勾选当前搜索结果里的全部组合，再点一次即取消
-- 全选按搜索框过滤后的列表生效；已选数量实时显示；部分勾选时全选框显示中间态
-- 取消全部勾选后，页面标题与表格同步清空
 
 ## 功能
 
@@ -26,7 +25,6 @@
 - 重点优化清单、广告组合视图、ASIN 维度、投放证据
 - 增量同步（断点续传）、Excel 导出（52 工作表）
 - 自动检查更新：配置页可手动检查，发现新版本弹窗提示
-- GitHub 主页入口（左上角图标）
 
 ## 系统要求
 
