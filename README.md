@@ -4,18 +4,14 @@
 
 ## 下载
 
-最新版本：**v1.2.7**
+最新版本：**v1.2.8**
 
-- Windows 免安装版：[下载 search-term-system-setup.exe](https://github.com/136435954/search-term-system-dist/releases/download/v1.2.7/search-term-system-setup.exe)
+- Windows 免安装版：[下载 search-term-system-setup.exe](https://github.com/136435954/search-term-system-dist/releases/download/v1.2.8/search-term-system-setup.exe)
 - [使用说明](使用说明.md)
 
-## 本版更新（v1.2.7）
+## 本版更新（v1.2.8）
 
-- 表格列名「数据开始日期 / 数据结束日期」改为「最早有数据 / 最晚有数据」，明确这是该搜索词实际有展现的日期范围，不是你选的统计区间
-
-## 上一版（v1.2.6）
-
-- 大表格分片渲染，53 组合 / 1.7 万行不再卡死
+UI 走查优化：去掉 Gitee CORS 报错、凭证打码+眼睛切换、店铺下拉自动定位、组合列表按前缀分组、断点状态折叠、文案修正。
 
 ## 功能
 
