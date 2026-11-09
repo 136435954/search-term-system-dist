@@ -4,14 +4,14 @@
 
 ## 下载
 
-最新版本：**v1.2.8**
+最新版本：**v1.2.9**
 
-- Windows 免安装版：[下载 search-term-system-setup.exe](https://github.com/136435954/search-term-system-dist/releases/download/v1.2.8/search-term-system-setup.exe)
+- Windows 免安装版：[下载 search-term-system-setup.exe](https://github.com/136435954/search-term-system-dist/releases/download/v1.2.9/search-term-system-setup.exe)
 - [使用说明](使用说明.md)
 
-## 本版更新（v1.2.8）
+## 本版更新（v1.2.9）
 
-UI 走查优化：去掉 Gitee CORS 报错、凭证打码+眼睛切换、店铺下拉自动定位、组合列表按前缀分组、断点状态折叠、文案修正。
+文案口径修正：卡片加 ACoS 线标注、p3/p4 标题区分、空状态引导、切店铺提示。
 
 ## 功能
 
