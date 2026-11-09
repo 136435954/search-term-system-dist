@@ -4,19 +4,19 @@
 
 ## 下载
 
-最新版本：**v1.2.5**
+最新版本：**v1.2.6**
 
-- Windows 免安装版：[下载 search-term-system-setup.exe](https://github.com/136435954/search-term-system-dist/releases/download/v1.2.5/search-term-system-setup.exe)
+- Windows 免安装版：[下载 search-term-system-setup.exe](https://github.com/136435954/search-term-system-dist/releases/download/v1.2.6/search-term-system-setup.exe)
 - [使用说明](使用说明.md)
 
-## 本版更新（v1.2.5）
+## 本版更新（v1.2.6）
 
-- 全选 41 个广告组合时页面卡顿明显改善：从原来的约 9.6 秒降到约 2.9 秒
-- 优化方式：只渲染当前正在看的那个表格（搜索词明细 / 广告组合视图），不再同时生成两份上万行 DOM；渲染期间先显示「正在渲染 N 行」提示，不再整页冻结
+- 修复全选大量广告组合时浏览器「此页面没有响应」的问题：表格改为分片渲染（每批 400 行，带实时进度提示），53 组合 / 1.7 万行约 2 秒出表，期间浏览器不卡死、可操作
+- v1.2.5 曾尝试只渲染当前页表格，但 1.7 万行一次性 innerHTML 仍会冻结主线程；本版改为逐批插入，彻底解决
 
-## 上一版（v1.2.4）
+## 上一版（v1.2.5）
 
-- 配置页「测试连接」报错时，直接显示积加网关返回的具体原因（如「IP 不在白名单」「签名校验不通过」），不再只显示笼统的「HTTP 400 Bad Request」
+- 全选 41 个广告组合时渲染提速（9.6s→2.9s）
 
 ## 功能
 
