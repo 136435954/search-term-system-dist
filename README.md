@@ -4,17 +4,20 @@
 
 ## 下载
 
-最新版本：**v1.2.3**
+最新版本：**v1.2.4**
 
-- Windows 免安装版：[下载 search-term-system-setup.exe](https://github.com/136435954/search-term-system-dist/releases/download/v1.2.3/search-term-system-setup.exe)
+- Windows 免安装版：[下载 search-term-system-setup.exe](https://github.com/136435954/search-term-system-dist/releases/download/v1.2.4/search-term-system-setup.exe)
 - [使用说明](使用说明.md)
 
-## 本版更新（v1.2.3）
+## 本版更新（v1.2.4）
+
+- 配置页「测试连接」报错时，直接显示积加网关返回的具体原因（如「IP 不在白名单」「签名校验不通过」），不再只显示笼统的「HTTP 400 Bad Request」
+
+## 上一版（v1.2.3）
 
 - 广告组合列表新增「全选」：一键勾选当前搜索结果里的全部组合，再点一次即取消
-- 全选按搜索框过滤后的列表生效，先搜关键词再全选可以只选中同一类组合
-- 已选数量实时显示（如「已选 12/41」），部分勾选时全选框显示中间态
-- 取消全部勾选后，页面标题与表格同步清空，不再残留上一次的组合数
+- 全选按搜索框过滤后的列表生效；已选数量实时显示；部分勾选时全选框显示中间态
+- 取消全部勾选后，页面标题与表格同步清空
 
 ## 功能
 
@@ -29,7 +32,7 @@
 
 - Windows 10 / 11
 - 可访问积加开放平台（open.gerpgo.com）
-- 需要积加开放平台 AppId / AppKey（在积加后台申请）
+- 需要积加开放平台 AppId / AppKey（在积加后台申请，并在后台把本机公网 IP 加入白名单）
 
 ## 隐私与安全
 
